@@ -12,7 +12,7 @@ function initMap() {
   });
 }
 
-function toggleHeatmap() {
+/*function toggleHeatmap() {
   heatmap.setMap(heatmap.getMap() ? null : map);
 }
 
@@ -44,7 +44,7 @@ function changeOpacity() {
   heatmap.set("opacity", heatmap.get("opacity") ? null : 0.2);
 }
 
-function getPoints() {
+*/function getPoints() {
   return [
     new google.maps.LatLng(-23.5489, -46.6388),
     new google.maps.LatLng(37.782745, -122.444586),
