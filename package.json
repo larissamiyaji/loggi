@@ -1,0 +1,18 @@
+{
+  "name": "loggi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve ./public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^15.3.0",
+    "serve": "^11.3.2",
+    "start": "^5.1.0"
+  }
+}
