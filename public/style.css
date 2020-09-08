@@ -1,24 +1,3 @@
-/* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-#map {
-  height: 100vh;
-  width: 100vw;
-  /* justify-content: center;
-  align-items: center; */
-}
-header {
-  background-color: #00baff;
-  display: flex;
-}
-
-.article{
-  max-width: 100vh;
-}
-.main {
-  display: flex;
-  justify-content: space-evenly;
-}
-/* Optional: Makes the sample page fill the window. */
 html,
 body {
   display: block;
@@ -26,8 +5,46 @@ body {
   margin: 0;
   padding: 0;
 }
-#floating-panel {
-  /* position: absolute; */
+
+.main{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header{
+  background-color: #00BAFF;
+  display: flex;
+  justify-content: center;
+}
+
+.footer{
+  background-color: #00BAFF;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.logo{
+  height: 7vh;
+  padding: 1vh;
+}
+
+#map {
+  height: 100vh;
+  width: 100vh;
+}
+
+.article{
+  max-width: 100vh;
+}
+
+/*#floating-panel {
   top: 10px;
   left: 25%;
   z-index: 5;
@@ -45,7 +62,7 @@ body {
   border: 1px solid #999;
   left: 25%;
   padding: 5px;
-  /* position: absolute; */
+  position: absolute; 
   top: 10px;
   z-index: 5;
-}
+}*/
