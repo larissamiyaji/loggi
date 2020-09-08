@@ -1,0 +1,25 @@
+{
+  "name": "loggi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "graphiql": "^1.0.3",
+    "serve": "^11.3.2",
+    "start": "^5.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve ./public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabitener/loggi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabitener/loggi/issues"
+  },
+  "homepage": "https://github.com/nabitener/loggi#readme"
+}
