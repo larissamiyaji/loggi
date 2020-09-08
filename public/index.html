@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Heatmaps</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIvFMTXNMfoOaEYO6zBHAZsRGZeNTe5lg&callback=initMap&libraries=visualization&v=weekly"
-      defer
-    ></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="./app.js"></script>
-  </head>
-  <body>
-    <div id="floating-panel">
-      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button onclick="changeGradient()">Change gradient</button>
-      <button onclick="changeRadius()">Change radius</button>
-      <button onclick="changeOpacity()">Change opacity</button>
-    </div>
-      <div id="map"></div>
-  </body>
+
+<head>
+  <title>Heatmaps</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIvFMTXNMfoOaEYO6zBHAZsRGZeNTe5lg&callback=initMap&libraries=visualization&v=weekly"
+    defer></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script src="./app.js"></script>
+</head>
+
+<body>
+  <header>
+    <p>Loggi</p>
+    <p>Descrição</p>
+  </header>
+  <main class="main">
+    <article class="article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula, sem vel efficitur
+      faucibus, eros nisl faucibus velit, non viverra nibh nisi vel felis. Etiam a purus erat. Sed et justo ac sapien
+      posuere dignissim vitae rutrum erat. Integer pharetra massa eget dapibus mattis. Mauris vel pharetra ligula.
+      Integer vestibulum elementum orci, eu cursus urna sagittis quis. Quisque sodales tincidunt nisi vitae condimentum.
+      Integer blandit id diam at aliquam. Nam ornare nunc tortor, quis accumsan elit suscipit in. Sed eleifend tempor
+      justo quis consequat. Pellentesque vestibulum a dolor sed ullamcorper. Donec egestas cursus diam ac ultrices.
+    </article>
+    <div id="map"></div>
+  </main>
+</body>
+
 </html>
+<!-- <div id="floating-panel">
+    <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+    <button onclick="changeGradient()">Change gradient</button>
+    <button onclick="changeRadius()">Change radius</button>
+    <button onclick="changeOpacity()">Change opacity</button>
+  </div> -->
