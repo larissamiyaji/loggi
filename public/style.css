@@ -1,0 +1,68 @@
+html,
+body {
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header{
+  background-color: #00BAFF;
+  display: flex;
+  justify-content: center;
+}
+
+.footer{
+  background-color: #00BAFF;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.logo{
+  height: 7vh;
+  padding: 1vh;
+}
+
+#map {
+  height: 100vh;
+  width: 100vh;
+}
+
+.article{
+  max-width: 100vh;
+}
+
+/*#floating-panel {
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+#floating-panel {
+  background-color: #fff;
+  border: 1px solid #999;
+  left: 25%;
+  padding: 5px;
+  /* position: absolute; 
+  top: 10px;
+  z-index: 5;
+}*/
