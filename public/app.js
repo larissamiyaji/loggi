@@ -1,4 +1,4 @@
-let map, heatmap;
+let map, heatmap, marker, i;
 
 async function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -17,24 +17,37 @@ async function initMap() {
     data: getPoints,
     map: map
   });
+  const countAllDrivers = response.data.closestDrivers.driversCount;
+  const countReadyDrivers = response.data.closestDrivers.readyDriversCount;
+  const countBusyDrivers = response.data.closestDrivers.busyDriversCount;
+
+const allDrivers = document.getElementById("allDrivers")
+allDrivers.innerHTML = countAllDrivers
+const busyDrivers = document.getElementById("busyDrivers")
+busyDrivers.innerHTML = countBusyDrivers
+const readyDrivers = document.getElementById("readyDrivers")
+readyDrivers.innerText = countReadyDrivers
 
   setMarkers(map);
-
-
-  /*   markerCenter = new google.maps.Marker({
-    position: new google.maps.LatLng( -23.5489, -46.6388 ),
-    map: map,
-    title: 'Clique Aqui!',
-    icon: './imagem/delivery-man.png'
-  });
-  let infowindow = new google.maps.InfoWindow(), markerCenter;
+  var south = new google.maps.LatLng(-23.5489, -46.6388)
+  var east = new google.maps.LatLng(-23.5338, -46.5033)
+  var north = new google.maps.LatLng( -23.5719, -46.7008)
+  var central = new google.maps.LatLng( -23.5489, -46.6388)
+  var west = new google.maps.LatLng(-23.5719, -46.7008)
   
-  google.maps.event.addListener(markerCenter, 'click', (function(markerCenter, i) {
-    return function() {
-      infowindow.setContent("Zona Central");
-      infowindow.open(map, markerCenter);
-    }
-  })(markerCenter)) */
+/*   var coordenadas = [south, east, north, central, west];
+var flightPath=new google.maps.Polygon({
+  path:coordenadas,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2,
+  fillColor:"#0000FF",
+  fillOpacity:0.4
+  });
+  
+  flightPath.setMap(map); */
+
+
 }
 
 const region = [
@@ -56,9 +69,9 @@ function setMarkers(map) {
     coords: [1, 1, 1, 40, 40, 40, 40, 1],
     type: 'poly'
   };
-  for (var i = 0; i < region.length; i++) {
-    let zona = region[i];
-    let marker = new google.maps.Marker({
+  for (var x = 0; x < region.length; x++) {
+    let zona = region[x];
+    marker = new google.maps.Marker({
       position: { lat: zona[1], lng: zona[2] },
       map: map,
       icon: image,
@@ -66,7 +79,14 @@ function setMarkers(map) {
       title: zona[0],
       zIndex: zona[3]
     });
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+        infowindow.setContent(zona[0]);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
   }
+  var infowindow = new google.maps.InfoWindow();
 }
 
 function toggleHeatmap() {
