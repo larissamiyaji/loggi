@@ -44,7 +44,7 @@ a{
   max-width: 100vh;
 }
 
-/*#floating-panel {
+#floating-panel {
   top: 10px;
   left: 25%;
   z-index: 5;
@@ -62,7 +62,7 @@ a{
   border: 1px solid #999;
   left: 25%;
   padding: 5px;
-  /* position: absolute; 
+  position: absolute; 
   top: 10px;
   z-index: 5;
-}*/
+}
