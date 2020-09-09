@@ -12,12 +12,72 @@ async function initMap() {
       return new google.maps.LatLng(item.lat, item.lng)
     }
   })
-  
+
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints,
     map: map
   });
+
+  setMarkers(map);
+
+
+  /*   markerCenter = new google.maps.Marker({
+    position: new google.maps.LatLng( -23.5489, -46.6388 ),
+    map: map,
+    title: 'Clique Aqui!',
+    icon: './imagem/delivery-man.png'
+  });
+  let infowindow = new google.maps.InfoWindow(), markerCenter;
+  
+  google.maps.event.addListener(markerCenter, 'click', (function(markerCenter, i) {
+    return function() {
+      infowindow.setContent("Zona Central");
+      infowindow.open(map, markerCenter);
+    }
+  })(markerCenter)) */
 }
+
+const region = [
+  ['Zona Sul', -23.6542, -46.6592, 4],
+  ['Zona Leste', -23.5338, -46.5033, 3],
+  ['Zona Oeste', -23.5719, -46.7008, 2],
+  ['Zona Norte', -23.4803, -46.6708, 1],
+  ['Zona Central', -23.5489, -46.6388, 0]
+]
+function setMarkers(map) {
+  let image = {
+    url: './imagem/delivery-man.png',
+    size: new google.maps.Size(50, 50),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(0, 32)
+  };
+
+  let shape = {
+    coords: [1, 1, 1, 40, 40, 40, 40, 1],
+    type: 'poly'
+  };
+  for (var i = 0; i < region.length; i++) {
+    let zona = region[i];
+    let marker = new google.maps.Marker({
+      position: { lat: zona[1], lng: zona[2] },
+      map: map,
+      icon: image,
+      shape: shape,
+      title: zona[0],
+      zIndex: zona[3]
+    });
+  }
+}
+
+/* let infowindow = new google.maps.InfoWindow(), markerCenter;
+  
+  google.maps.event.addListener(markerCenter, 'click', (function(markerCenter, i) {
+    return function() {
+      for (var i = 0; i < region.length; i++)
+      infowindow.setContent(zona[0]);
+      infowindow.open(map, markerCenter);
+    }
+  })(markerCenter)) */
 
 function toggleHeatmap() {
   heatmap.setMap(heatmap.getMap() ? null : map);
@@ -49,7 +109,7 @@ const consumirApi = async (endpoint, query, variables = {}) => {
   });
   return response.json();
 }
-  
+
 function changeGradient() {
   const gradient = [
     "rgba(0, 255, 255, 0)",
