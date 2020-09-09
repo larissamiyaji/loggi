@@ -69,16 +69,6 @@ function setMarkers(map) {
   }
 }
 
-/* let infowindow = new google.maps.InfoWindow(), markerCenter;
-  
-  google.maps.event.addListener(markerCenter, 'click', (function(markerCenter, i) {
-    return function() {
-      for (var i = 0; i < region.length; i++)
-      infowindow.setContent(zona[0]);
-      infowindow.open(map, markerCenter);
-    }
-  })(markerCenter)) */
-
 function toggleHeatmap() {
   heatmap.setMap(heatmap.getMap() ? null : map);
 }
