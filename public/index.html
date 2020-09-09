@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Heatmaps</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIvFMTXNMfoOaEYO6zBHAZsRGZeNTe5lg&callback=initMap&libraries=visualization&v=weekly"
-      defer
-    ></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="./app.js"></script>
-  </head>
-  <body>
-    <div id="floating-panel">
-      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button onclick="changeGradient()">Change gradient</button>
-      <button onclick="changeRadius()">Change radius</button>
-      <button onclick="changeOpacity()">Change opacity</button>
-    </div>
-    <header class="header">
-      <img src="./imagem/logo.png" alt="Logo Loggi" class="logo">
-    </header>
-    <main class="main">
-      <article class="article">Descrição mapa</article>
-      <div id="map" class="map"></div>
-    </main> 
-    <footer class="footer">
-      Desenvolvido por <a href="https://www.linkedin.com/in/camila-roque/"> Camila</a>,<a href="https://www.linkedin.com/in/larissamiyaji/"> Larissa</a>,
-      <a href="https://www.linkedin.com/in/marcella-teliceski/"> Marcella</a> e <a href="https://www.linkedin.com/in/nathaliabitener/"> Nathalia</a> 
-    </footer> 
-  </body>
+
+<head>
+  <title>Heatmaps</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIvFMTXNMfoOaEYO6zBHAZsRGZeNTe5lg&callback=initMap&libraries=visualization&v=weekly"
+    defer></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script src="./app.js"></script>
+</head>
+
+<body>
+  <div id="floating-panel">
+    <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+    <button onclick="changeGradient()">Change gradient</button>
+    <button onclick="changeRadius()">Change radius</button>
+    <button onclick="changeOpacity()">Change opacity</button>
+  </div>
+  <header class="header">
+    <img src="./imagem/logo.png" alt="Logo Loggi" class="logo">
+  </header>
+  <main class="main">
+    <article class="article">
+      Lorem ipsum dolor sit amet</article>
+    <div id="map" class="map"></div>
+  </main>
+  <footer class="footer">
+    Desenvolvido por <a href="https://www.linkedin.com/in/camila-roque/"> Camila</a>,<a
+      href="https://www.linkedin.com/in/larissamiyaji/"> Larissa</a>,
+    <a href="https://www.linkedin.com/in/marcella-teliceski/"> Marcella</a> e <a
+      href="https://www.linkedin.com/in/nathaliabitener/"> Nathalia</a>
+  </footer>
+</body>
+
 </html>
