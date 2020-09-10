@@ -4,7 +4,86 @@ async function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,
     center: { lat: -23.5489, lng: -46.6388 },
-    mapTypeId: "roadmap",
+    styles: [
+      { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+      {
+        featureType: "administrative.locality",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "poi",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "geometry",
+        stylers: [{ color: "#263c3f" }],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#6b9a76" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{ color: "#38414e" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry.stroke",
+        stylers: [{ color: "#212a37" }],
+      },
+      {
+        featureType: "road",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#9ca5b3" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry",
+        stylers: [{ color: "#746855" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry.stroke",
+        stylers: [{ color: "#1f2835" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#f3d19c" }],
+      },
+      {
+        featureType: "transit",
+        elementType: "geometry",
+        stylers: [{ color: "#2f3948" }],
+      },
+      {
+        featureType: "transit.station",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "water",
+        elementType: "geometry",
+        stylers: [{ color: "#17263c" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#515c6d" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.stroke",
+        stylers: [{ color: "#17263c" }],
+      },
+    ],
   });
   const response = await consumirApi(endpoint, Appquery);
   const getPoints = response.data.closestDrivers.drivers.map((item) => {
@@ -29,23 +108,23 @@ async function initMap() {
   readyDrivers.innerText = countReadyDrivers;
 
   setMarkers(map);
-  var south = new google.maps.LatLng(-23.5489, -46.6388);
-  var east = new google.maps.LatLng(-23.5338, -46.5033);
-  var north = new google.maps.LatLng(-23.5719, -46.7008);
-  var central = new google.maps.LatLng(-23.5489, -46.6388);
-  var west = new google.maps.LatLng(-23.5719, -46.7008);
+  let south = new google.maps.LatLng(-23.5489, -46.6388);
+  let east = new google.maps.LatLng(-23.5338, -46.5033);
+  let north = new google.maps.LatLng(-23.5719, -46.7008);
+  let central = new google.maps.LatLng(-23.5489, -46.6388);
+  let west = new google.maps.LatLng(-23.5719, -46.7008);
 
-  /*   var coordenadas = [south, east, north, central, west];
-var flightPath=new google.maps.Polygon({
-  path:coordenadas,
-  strokeColor:"#0000FF",
-  strokeOpacity:0.8,
-  strokeWeight:2,
-  fillColor:"#0000FF",
-  fillOpacity:0.4
+  let coordenadas = [south, east, north, central, west];
+  let flightPath = new google.maps.Polygon({
+    path: coordenadas,
+    strokeColor: "#0000FF",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#0000FF",
+    fillOpacity: 0.4,
   });
-  
-  flightPath.setMap(map); */
+
+  flightPath.setMap(map);
 }
 
 const region = [
@@ -67,7 +146,7 @@ function setMarkers(map) {
     coords: [1, 1, 1, 40, 40, 40, 40, 1],
     type: "poly",
   };
-  for (var x = 0; x < region.length; x++) {
+  for (let x = 0; x < region.length; x++) {
     let zona = region[x];
     marker = new google.maps.Marker({
       position: { lat: zona[1], lng: zona[2] },
@@ -88,7 +167,7 @@ function setMarkers(map) {
       })(marker, i)
     );
   }
-  var infowindow = new google.maps.InfoWindow();
+  let infowindow = new google.maps.InfoWindow();
 }
 
 function toggleHeatmap() {
