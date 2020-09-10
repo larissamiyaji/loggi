@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Heatmaps</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIvFMTXNMfoOaEYO6zBHAZsRGZeNTe5lg&callback=initMap&libraries=visualization&v=weekly"
-    defer></script>
-  <link rel="stylesheet" type="text/css" href="./style.css" />
-  <script src="./app.js"></script>
-</head>
-
-<body>
-  <header class="header">
-    <img src="./imagem/logo.png" alt="Logo Loggi" class="logo">
-  </header>
-  <main class="main">
-    <article class="article">Descrição mapa</article>
-    <div id="floating-panel" class="floating-panel">
-      <button onclick="toggleHeatmap()">Mapa de Calor</button>
-      <button onclick="changeGradient()">Gradiente</button>
-      <button onclick="changeRadius()">Raio</button>
-      <button onclick="changeOpacity()">Opacidade</button>
-      <div id="map" class="map"></div>
-    </div>
-  </main>
-  <footer class="footer">
-    Desenvolvido por <a href="https://www.linkedin.com/in/camila-roque/"> Camila</a>,<a
-      href="https://www.linkedin.com/in/larissamiyaji/"> Larissa</a>,
-    <a href="https://www.linkedin.com/in/marcella-teliceski/"> Marcella</a> e <a
-      href="https://www.linkedin.com/in/nathaliabitener/"> Nathalia</a>
-  </footer>
-</body>
-
+  <head>
+    <title>Loggi</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIvFMTXNMfoOaEYO6zBHAZsRGZeNTe5lg&callback=initMap&libraries=visualization&v=weekly"
+      defer
+    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icone.png">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./app.js"></script>
+  </head>
+  <body>
+ 
+    <header class="header">
+      <img src="./imagem/logo.png" alt="Logo Loggi" class="logo">
+    </header>
+    <main class="main">
+      <article class="article">
+        <h3 class="titulo-mapa">Mapa de Calor de Oferta de Mensageiros</h3>
+        <br>
+        Esse mapa de calor foi desenvolvido para que os mensageiros Loggi
+        consigam observar qual região da Cidade de São Paulo possui mais mensageiros disponíveis,
+        e que assim eles consigam atender as regiões com menos mensageiros.
+        <div class="drivers">
+          <h4 class="titulo-info">Total de Mensageiros</h4>
+          <div id="allDrivers"></div>
+          <h4 class="titulo-info">Mensageiros Ocupados</h4>
+          <div id="busyDrivers"></div>
+          <h4 class="titulo-info">Mensageiros Disponíveis</h4>
+          <div id="readyDrivers"></div>
+        </div>
+      </article>
+ 
+      <div id="floating-panel" class="floating-panel">
+        <button onclick="toggleHeatmap()">Mapa de Calor</button>
+        <button onclick="changeGradient()">Gradiente</button>
+        <button onclick="changeRadius()">Raio</button>
+        <button onclick="changeOpacity()">Opacidade</button>
+        <div id="map" class="map"></div>
+        <legend class="legend">Mapa de calor que mostra mensageiros disponíveis na cidade de São Paulo</legend>
+      </div>
+      
+    </main> 
+    <footer class="footer">
+      Desenvolvido por <a href="https://www.linkedin.com/in/camila-roque/"> Camila</a>,<a href="https://www.linkedin.com/in/larissamiyaji/"> Larissa</a>,
+      <a href="https://www.linkedin.com/in/marcella-teliceski/"> Marcella</a> e <a href="https://www.linkedin.com/in/nathaliabitener/"> Nathalia</a> 
+    </footer> 
+  </body>
 </html>
